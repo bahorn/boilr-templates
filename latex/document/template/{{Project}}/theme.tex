@@ -1,66 +1,22 @@
 \input{./config}
 \usepackage{xspace}
-\usepackage[style=ieee,backend=biber]{biblatex}
+\usepackage[style=ieee,backend=biber,block=ragged]{biblatex}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{enumitem}
 \usepackage{xcolor}
-\usepackage{hyperref}
+\usepackage[breaklinks]{hyperref}
 \usepackage{listings}
 \usepackage{totcount}
 \usepackage{algorithm2e}
 \setcounter{biburllcpenalty}{7000}
 \setcounter{biburlucpenalty}{8000}
 \usepackage[a4paper, margin=1in]{geometry}
-
 \graphicspath{ {./figures/} }
-
 %--------------------------------------------------------------------------------
 % Style stuff
-\pagestyle{fancy}
-\lhead{\coursename\ (\coursecode)}
-\chead{}
-\rhead{\mytitle}
-\lfoot{\coursecode}
-\cfoot{}
-\rfoot{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-\renewcommand{\familydefault}{\sfdefault}
-
-
-\newcommand{\withpoints}[1]{%
-  \addtocounter{pointscounter}{#1} \printpoints{#1}
-}
-\newcommand{\printpoints}[1]{%
-   \ifthenelse{#1 = 0}
-              {}
-              {\textit{(#1 points)}}\mbox{}\\
-}
-
-\newenvironment{questions}{\begin{enumerate}[label=\textbf{Question \arabic*}
-                                            ,labelwidth=!
-                                            ,align=left
-                                            ]}
-                          {\end{enumerate}}
-\newenvironment{parts}{\begin{enumerate}[leftmargin=*
-                                        ]}
-                      {\end{enumerate}}
-
-\newcommand{\question}[1][0]{\item\stepcounter{questionscounter}\withpoints{#1}}
-\newcommand{\qpart}[1][0]{\item \withpoints{#1}}
-
-\newtotcounter{questionscounter}
-\newtotcounter{pointscounter}
-
-\newcommand{\numquestions}{\total{questionscounter}}
-\newcommand{\numpoints}{\total{pointscounter}}
-
-%--------------------------------------------------------------------------------
-\newcommand{\myremark}[3]{\textcolor{blue}{\textsc{#1 #2:}} \textcolor{red}{\textsf{#3}}}
-% \renewcommand{\myremark}[3]{}
-\newcommand{\frank}[2][says]{\myremark{Frank}{#1}{#2}}
+\pagestyle{plain}
 
 %--------------------------------------------------------------------------------
 % Theorem Environments
